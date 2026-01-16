@@ -13,11 +13,11 @@ export default async function ReleaseNotesPage({
 }) {
   const { page } = await params;
   const totalPageCount = await readTotalReleaseNotesPageCount(
-    MAX_RELEASE_NOTES_PER_PAGE
+    MAX_RELEASE_NOTES_PER_PAGE,
   );
   const notes = await readReleaseNotesPage(
     Number(page),
-    MAX_RELEASE_NOTES_PER_PAGE
+    MAX_RELEASE_NOTES_PER_PAGE,
   );
 
   return (
@@ -43,16 +43,14 @@ export default async function ReleaseNotesPage({
 
 export async function generateStaticParams() {
   const totalPageCount = await readTotalReleaseNotesPageCount(
-    MAX_RELEASE_NOTES_PER_PAGE
+    MAX_RELEASE_NOTES_PER_PAGE,
   );
 
   return Array.from({
     length: totalPageCount,
-  })
-    .map((_, index) => ({
-      page: String(index + 1),
-    }))
-    .slice(1);
+  }).map((_, index) => ({
+    page: String(index + 1),
+  }));
 }
 
 export const dynamicParams = false;
