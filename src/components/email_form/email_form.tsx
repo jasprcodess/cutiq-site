@@ -135,7 +135,7 @@ function DefaultHeader() {
       <div className={styles.appleLogo}>
         <AppleLogo width={16} height={16} />
       </div>
-      <div>Coming soon to the app store</div>
+      <div>Coming soon to the App Store</div>
     </div>
   );
 }
