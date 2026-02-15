@@ -70,7 +70,9 @@ export default function RootLayout({
     <html lang="en" data-theme={THEME}>
       <head>
         {/* This makes Safari on iOS show the App Store download banner */}
-        <meta name="apple-itunes-app" content={`app-id=${APP_ID}`} />
+        {!IS_WAITLIST_ENABLED && (
+          <meta name="apple-itunes-app" content={`app-id=${APP_ID}`} />
+        )}
 
         <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48" />
 
