@@ -11,6 +11,7 @@ import { Navbar } from "@/components/navbar/navbar";
 import { ThemeStyle } from "@/components/theme_style/theme_style";
 import "@/global.css";
 import { ThemeProvider } from "@/providers/theme_provider";
+import { Section } from "@/components/section/section";
 
 export const metadata: Metadata = {
   /**
@@ -132,34 +133,36 @@ export default function RootLayout({
           )}
 
           {IS_WAITLIST_ENABLED && (
-            <Hero
-              title="App Title"
-              subtitle="Short app description that highlights what the app does and its key value"
-              media={
-                <Hero.Image
-                  src="/app_view/screenshot_placeholder.png"
-                  alt=""
-                  bezel="iPhone 17 Black"
-                />
-              }
-              action={
-                <>
-                  <EmailForm
-                    providerConfig={{
-                      provider: "loops",
-                      config: {
-                        formId: "your-loops-form-id",
-                      },
-                    }}
+            <Section paddingTop={60}>
+              <Hero
+                title="App Title"
+                subtitle="Short app description that highlights what the app does and its key value"
+                media={
+                  <Hero.Image
+                    src="/app_view/screenshot_placeholder.png"
+                    alt=""
+                    bezel="iPhone 17 Black"
                   />
-                  {/*
-                    You can also use a simple button to redirect users
-                    to a custom page where you collect emails
-                  */}
-                  {/* <GetNotifiedActionButton href="your-email-form-link" /> */}
-                </>
-              }
-            />
+                }
+                action={
+                  <>
+                    <EmailForm
+                      providerConfig={{
+                        provider: "loops",
+                        config: {
+                          formId: "your-loops-form-id",
+                        },
+                      }}
+                    />
+                    {/*
+                      You can also use a simple button to redirect users
+                      to a custom page where you collect emails
+                    */}
+                    {/* <GetNotifiedActionButton href="your-email-form-link" /> */}
+                  </>
+                }
+              />
+            </Section>
           )}
         </ThemeProvider>
 
