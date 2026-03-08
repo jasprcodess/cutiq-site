@@ -1,6 +1,6 @@
 {
   "name": "app-view",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "Website template for iOS apps",
   "main": "index.js",
@@ -41,10 +41,10 @@
     "@playwright/test": "^1.58.2",
     "@svgr/webpack": "8.1.0",
     "@types/chroma-js": "^3.1.2",
-    "@types/node": "25.2.3",
+    "@types/node": "25.3.5",
     "@types/react": "^19.2.14",
-    "baseline-browser-mapping": "^2.9.19",
-    "eslint": "^10.0.0",
+    "baseline-browser-mapping": "^2.10.0",
+    "eslint": "^10.0.3",
     "eslint-config-next": "^16.1.6",
     "sharp": "^0.34.5",
     "typescript": "5.9.3"
