@@ -33,7 +33,7 @@ export const MATERIAL_SYMBOLS = [
 export const COLORS: ColorScheme = {
   LIGHT: {
     "text-primary": "#000000",
-    "text-secondary": "rgba(0, 0, 0, 0.55)",
+    "text-secondary": "rgba(0, 0, 0, 0.62)",
     "fill-0": "#FFFFFF",
     "fill-1": "#F5F5F5",
     "fill-2": "#EBEBEB",

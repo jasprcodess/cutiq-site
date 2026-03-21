@@ -6,10 +6,10 @@ import { Section } from "@/components/section/section";
 export default function Page() {
   return (
     <>
-      <Section paddingTop={100}>
+      <Section paddingTop={80}>
         <Hero
-          title="See what works before you cut."
-          subtitle="Take four photos. Get an AI hair analysis with a health score, face shape, and a weekly routine. Preview any hairstyle on your own face."
+          title="Know your hair before you change it."
+          subtitle="Four angles. AI analysis. A health score, face shape read, personalized routine, and realistic style previews on your own photo."
           media={
             <Hero.Video
               src="/cutiq/hero-demo.mp4"
@@ -25,8 +25,8 @@ export default function Page() {
         <CardGrid rowHeight={440}>
           <CardGrid.StackedCard
             maxWidth="twoThirds"
-            title="Hair analysis from four angles"
-            description="Capture your front, top, side, and hairline. Get back a health score, face shape, texture read, and clear next steps."
+            title="Not a filter. An analysis."
+            description="Capture four angles of your hair. Get a health score, texture profile, face shape, and specific things to fix. The kind of feedback a good stylist would give you."
             media={
               <CardGrid.StackedCard.Video
                 src="/cutiq/hero-demo.mp4"
@@ -40,14 +40,14 @@ export default function Page() {
           <CardGrid.IconCard
             maxWidth="third"
             iconName="target"
-            title="Weekly routine"
-            description="Your analysis creates a schedule with products and timing. Check off tasks daily. Run a new analysis and it updates."
+            title="A routine, not a guess"
+            description="Your analysis generates a weekly schedule with products and timing. Check off tasks. Redo the analysis and it updates."
           />
 
           <CardGrid.StackedCard
             maxWidth="third"
-            title="Try styles on your face"
-            description="Pick from 30+ styles or type your own. Every preview is generated on your actual photo."
+            title="Preview any style"
+            description="30+ styles or type your own. Every preview uses your actual photo, not a generic model."
             media={
               <CardGrid.StackedCard.Video
                 src="/cutiq/app-demo.mp4"
@@ -60,8 +60,8 @@ export default function Page() {
 
           <CardGrid.StackedCard
             maxWidth="twoThirds"
-            title="Compare before you commit"
-            description="Save the looks you like. Share them with your barber. Stop guessing."
+            title="Save it. Share it. Decide later."
+            description="Keep the looks you like. Compare them side by side. Send them to your barber."
             media={
               <CardGrid.StackedCard.Image
                 src="/cutiq/style-side-part.jpg"
@@ -75,31 +75,31 @@ export default function Page() {
           />
         </CardGrid>
 
-        <CardGrid rowHeight={200}>
+        <CardGrid rowHeight={180}>
           <CardGrid.IconCard
             maxWidth="third"
             iconName="send"
-            title="AI hair chat"
-            description="Ask about products, your score, or your routine. The AI already has your full analysis."
+            title="Ask the AI"
+            description="Chat with an assistant that already knows your score, hair type, and routine."
           />
 
           <CardGrid.IconCard
             maxWidth="third"
             iconName="lock"
-            title="No account needed"
-            description="Works with your iCloud. No email, no password, no sign-up."
+            title="No account"
+            description="Works with iCloud. No email, no password, no sign-up form."
           />
 
           <CardGrid.IconCard
             maxWidth="third"
             iconName="check_circle"
-            title="Your data stays private"
-            description="Source photos never hit our servers. Everything syncs through your personal iCloud."
+            title="Private"
+            description="Photos never hit our servers. Your data syncs through your own iCloud."
           />
         </CardGrid>
       </Section>
 
-      <Section paddingTop={40} paddingBottom={80}>
+      <Section paddingTop={40} paddingBottom={60}>
         <DownloadActionButton size="medium" label="Download on the App Store" />
       </Section>
     </>

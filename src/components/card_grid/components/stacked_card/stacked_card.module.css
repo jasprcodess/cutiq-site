@@ -80,9 +80,10 @@
 
     .description {
       font-size: 16px;
-      line-height: 1.15;
-      font-weight: 500;
-      margin-top: 6px;
+      line-height: 1.35;
+      font-weight: 400;
+      margin-top: 8px;
+      color: var(--color-text-secondary);
     }
   }
 }
@@ -172,7 +173,7 @@
 
       .title {
         font-size: 44px;
-        font-weight: 900;
+        font-weight: 700;
 
         &.whimsical {
           font-size: 52px;
@@ -184,9 +185,11 @@
       }
 
       .description {
-        font-size: 18px;
-        font-weight: 500;
-        margin-top: 8px;
+        font-size: 17px;
+        line-height: 1.35;
+        font-weight: 400;
+        margin-top: 10px;
+        color: var(--color-text-secondary);
       }
     }
   }
