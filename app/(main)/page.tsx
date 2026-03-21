@@ -23,18 +23,29 @@ export default function Page() {
 
       <Section navigationAnchor="features">
         <CardGrid rowHeight={440}>
-          <CardGrid.StackedCard
-            maxWidth="twoThirds"
+          <CardGrid.IconCard
+            maxWidth="third"
+            iconName="target"
             title="Four photos. Real feedback."
-            description="Get a health score, face shape, and what to do next."
-            media={
-              <CardGrid.StackedCard.Video
-                src="/cutiq/hero-demo.mp4"
-                bezel="iPhone 17 Black"
-                bezelCrop={{ edge: "bottom", croppedRatio: 0.28 }}
-              />
-            }
-            textAlignment="leading"
+            description="Health score, face shape, and what to do next."
+          />
+
+          <CardGrid.OverlaidCard
+            maxWidth="twoThirds"
+            imageSrc="/cutiq/style-gallery.jpg"
+            title="Try any style"
+            description="30+ looks on your actual face."
+            textAlignment="bottomLeading"
+            textColorTheme="dark"
+          />
+
+          <CardGrid.OverlaidCard
+            maxWidth="twoThirds"
+            imageSrc="/cutiq/before-after.jpg"
+            title="Save and compare"
+            description="Keep the looks you like. Show your barber."
+            textAlignment="bottomLeading"
+            textColorTheme="dark"
           />
 
           <CardGrid.IconCard
@@ -43,39 +54,9 @@ export default function Page() {
             title="Weekly routine"
             description="Products, timing, and progress tracking."
           />
-
-          <CardGrid.StackedCard
-            maxWidth="third"
-            title="Try any style"
-            description="30+ looks on your actual face."
-            media={
-              <CardGrid.StackedCard.Video
-                src="/cutiq/app-demo.mp4"
-                bezel="iPhone 17 Black"
-                bezelCrop={{ edge: "bottom", croppedRatio: 0.35 }}
-              />
-            }
-            textAlignment="leading"
-          />
-
-          <CardGrid.StackedCard
-            maxWidth="twoThirds"
-            title="Save and compare"
-            description="Keep the looks you like. Show your barber."
-            media={
-              <CardGrid.StackedCard.Image
-                src="/cutiq/style-side-part.jpg"
-                alt="Side part hairstyle preview"
-                bezel="iPhone 17 Black"
-                bezelCrop={{ edge: "top", croppedRatio: 0.25 }}
-              />
-            }
-            layoutDirection="reverse"
-            textAlignment="leading"
-          />
         </CardGrid>
 
-        <CardGrid rowHeight={180}>
+        <CardGrid rowHeight={160}>
           <CardGrid.IconCard
             maxWidth="third"
             iconName="send"
@@ -99,7 +80,7 @@ export default function Page() {
         </CardGrid>
       </Section>
 
-      <Section paddingTop={40} paddingBottom={60}>
+      <Section paddingTop={20} paddingBottom={40}>
         <DownloadActionButton size="medium" label="Download on the App Store" />
       </Section>
     </>
