@@ -11,7 +11,7 @@ import { ThemeProvider } from "@/providers/theme_provider";
 import "@/global.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cutiq.app";
-const TITLE = "CutIQ — AI hair analysis and style previews";
+const TITLE = "CutIQ - AI hair analysis and style previews";
 const DESCRIPTION =
   "Analyze your hair from four angles, get a health score and routine, and preview any hairstyle on your own photo.";
 
@@ -66,7 +66,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <Navbar
-            icon={<AppIcon src="/cutiq/app-icon.png" />}
+            icon={<AppIcon src="/cutiq/app-icon.png" mask />}
             appName="CutIQ"
             links={[
               { label: "Features", href: "#features" },
@@ -79,7 +79,7 @@ export default function RootLayout({
           {children}
 
           <CompactFooter
-            appIcon={<AppIcon src="/cutiq/app-icon.png" filter="grayscale" />}
+            appIcon={<AppIcon src="/cutiq/app-icon.png" mask filter="grayscale" />}
             links={[
               { label: "Privacy", href: "/privacy" },
               { label: "Terms", href: "/terms" },
