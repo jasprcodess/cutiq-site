@@ -6,18 +6,44 @@ CutIQ ("CutIQ," "we," "our," or "us") provides AI-powered hair analysis, hairsty
 
 ## Overview
 
-CutIQ is designed to help you analyze your hair, preview hairstyles, and track progress over time. To do that, the app uses a combination of on-device data, Apple's services, and our backend infrastructure. We do not sell your personal information and we do not use third-party advertising trackers inside the app.
+CutIQ is designed to help you analyze your hair, preview hairstyles, and track progress over time. The app uses a combination of on-device storage, Apple iCloud, and our backend infrastructure. We do not sell your personal information and we do not use third-party advertising trackers.
 
-## Data We Collect
+## Data We Collect and How It Is Handled
 
-CutIQ may process the following categories of information:
+### Photos and image content
 
-- **Photos and image content.** If you take a photo in the app or choose one from your photo library, CutIQ uses that image to generate hairstyle previews or hair analysis results.
-- **Hair analysis and routine data.** The app stores your analysis results, routine preferences, streaks, settings, and related progress information.
-- **Identifiers.** CutIQ uses an iCloud / CloudKit-based user identity and app-specific identifiers needed for syncing data and verifying secure app requests.
-- **Purchase and subscription status.** If you subscribe, the app verifies whether you have an active entitlement through Apple in-app purchases.
-- **Usage-limiting and security metadata.** Our backend may process limited request metadata needed for App Attest verification, subscription validation, abuse prevention, and rate limiting.
-- **Support communications.** If you email us, we receive the information you include in that message.
+- **Source photos** (selfies or photos you select for style generation): These are held in device memory only for the duration of the request. They are converted to a compressed format, sent to our backend for AI processing, and released from memory afterward. Source photos are never written to disk by the app and never stored on our servers.
+- **Front analysis photo**: When you complete a hair analysis, your front-facing photo is saved locally on your device and synced to your private iCloud (CloudKit) account so your analysis results can display it across sessions and devices.
+- **Other analysis photos** (top, side, hairline): These are combined into a single composite image, sent to our backend for analysis, and then released from memory. They are not stored on your device or in iCloud.
+- **Generated hairstyle images**: AI-generated results are saved locally on your device and synced to your private iCloud (CloudKit) account. If the auto-save setting is enabled (on by default), generated images are also saved to your device photo library with a CutIQ watermark.
+
+### Hair analysis and routine data
+
+The app stores your analysis results (score, hair type, texture, face shape, routine steps, weekly schedule), check-in history, routine preferences, streaks, and settings. This data is stored locally on your device and synced to your private iCloud (CloudKit) account.
+
+### Profile and onboarding data
+
+During onboarding, the app collects your selected face shape, age range, gender, and other preferences. This is stored locally and synced to your private iCloud (CloudKit) account.
+
+### Identifiers
+
+CutIQ uses an iCloud / CloudKit-based user identity. No email address, phone number, or password is collected for app use. App-specific identifiers are used for syncing data and verifying secure requests.
+
+### Purchase and subscription status
+
+If you subscribe, the app verifies your entitlement through Apple in-app purchases. Transaction metadata (such as a signed transaction token) is sent to our backend for server-side subscription verification. We do not receive your payment card information.
+
+### Chat messages
+
+When you use the AI chat feature, your messages and conversation history (up to the last 10 turns) are sent to our backend for processing. Chat messages are not stored on our servers or in iCloud. They exist only in device memory for the duration of your chat session.
+
+### Usage-limiting and security metadata
+
+Our backend processes limited request metadata for App Attest verification, subscription validation, rate limiting, and abuse prevention. Rate-limit counters are held in server memory only and are not persisted.
+
+### Support communications
+
+If you email us, we receive the information you include in that message.
 
 ## How We Use Data
 
@@ -25,10 +51,10 @@ We use data to:
 
 - provide hairstyle generation, hair analysis, and chat features;
 - save your app state and progress across sessions;
-- sync your information through your personal iCloud / CloudKit storage where applicable;
+- sync your data through your private iCloud / CloudKit storage;
 - verify subscriptions and secure app requests;
-- enforce usage limits and help prevent abuse;
-- improve reliability, troubleshoot issues, and respond to support requests.
+- enforce usage limits and prevent abuse;
+- respond to support requests.
 
 ## Sharing
 
@@ -36,49 +62,49 @@ We do not sell your personal information. We share data only as needed to operat
 
 ## Third-Party Services
 
-CutIQ uses the following third-party and platform services:
+1. **Apple CloudKit / iCloud** by Apple — used for syncing app data including your profile, analysis results, front analysis photo, and generated images. All CloudKit data is stored in your private database, accessible only to your iCloud account. [Apple privacy policy](https://www.apple.com/legal/privacy/)
 
-1. **Apple CloudKit / iCloud** by Apple - used for syncing certain app data and account state.
-   - Data involved: profile and routine settings, analysis-related app state, progress data, and other app records you create.
-   - Apple privacy policy: [Apple privacy policy](https://www.apple.com/legal/privacy/)
+2. **Apple In-App Purchase / App Store** by Apple — used to process subscriptions and verify purchase status. We do not receive your payment card information. [Apple privacy policy](https://www.apple.com/legal/privacy/)
 
-2. **Apple In-App Purchase / App Store** by Apple - used to process subscriptions and provide purchase status.
-   - Data involved: transaction and subscription status metadata.
-   - We do not receive your full payment card information.
-   - Apple privacy policy: [Apple privacy policy](https://www.apple.com/legal/privacy/)
+3. **Supabase** by Supabase, Inc. — used for backend edge functions that handle App Attest verification, hair analysis requests, hairstyle generation requests, and chat requests. Image data you submit for analysis or generation passes through Supabase to reach the AI model provider. Our backend does not persist image data or chat messages. [Supabase privacy policy](https://supabase.com/privacy)
 
-3. **Supabase** by Supabase, Inc. - used for backend edge functions that power secure app verification, hair analysis requests, hairstyle generation requests, and chat requests.
-   - Data involved: request payloads needed to fulfill those features, including image data you submit for analysis or generation, secure request verification metadata, and subscription verification metadata.
-   - Supabase privacy policy: [Supabase privacy policy](https://supabase.com/privacy)
+4. **Superwall** by Superwall — used for paywall presentation and entitlement handling. Receives app-specific user identifiers and subscription state. [Superwall privacy policy](https://superwall.com/privacy)
 
-4. **Superwall** by Superwall - used to manage paywall presentation and entitlement handling.
-   - Data involved: app-specific user identifiers and subscription / entitlement state needed to determine access.
-   - Superwall privacy policy: [Superwall privacy policy](https://superwall.com/privacy)
+5. **AI model providers accessed through our backend** — used to produce hair analysis results, hairstyle generation images, and chat responses. Image and text content you submit for these features is forwarded through our backend to the model provider. These requests are stateless on our end.
 
-5. **ModelRouter / AI model providers accessed through our backend** - used to produce hair analysis, hairstyle generation, and chat responses.
-   - Data involved: the text and image content you submit for those features.
-   - These requests are sent through our backend rather than directly from your device.
+## Data Storage Summary
+
+| Data | On Device | In Your iCloud | On Our Servers |
+|---|---|---|---|
+| Source photos (selfies) | Memory only | No | Not stored |
+| Front analysis photo | Yes | Yes | Not stored |
+| Other analysis photos | Memory only | No | Not stored |
+| Generated images | Yes | Yes | Not stored |
+| Analysis results and routine | Yes | Yes | Not stored |
+| Profile and preferences | Yes | Yes | Not stored |
+| Chat messages | Memory only | No | Not stored |
 
 ## Data Retention
 
-- Data stored in your personal Apple iCloud / CloudKit account may remain there until you delete it, delete app data, or remove it through your Apple account and device settings.
-- Backend request data is retained only as long as reasonably needed to operate the service, secure the app, troubleshoot issues, and comply with legal obligations.
-- Support emails are retained for as long as reasonably necessary to respond and maintain support history.
+- Data in your iCloud / CloudKit account remains until you delete it through the app, delete app data from your device, or manage it through your Apple account settings.
+- Locally stored data (images, analysis results) remains on your device until you delete it through the app or uninstall the app.
+- Our backend does not persist user data beyond the duration of individual requests. Rate-limit counters reset automatically.
+- Support emails are retained as long as reasonably necessary to respond and maintain support history.
 
 ## Security
 
-We use reasonable safeguards designed to protect information handled by CutIQ. These measures include encrypted network transport, Apple App Attest verification for supported devices, subscription verification, and backend controls intended to reduce abuse and unauthorized access. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.
+We use reasonable safeguards including encrypted network transport (HTTPS/TLS), Apple App Attest verification, server-side subscription verification, rate limiting, and input validation. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.
 
-## Your Choices and Rights
+## Your Choices
 
 You can:
 
 - stop granting camera or photo-library access through your iPhone settings;
+- turn off auto-save to photo library in the app settings;
+- delete individual generated images or all data through the app;
 - disable notifications through iPhone settings or within the app;
 - manage or cancel subscriptions through Apple;
-- contact us to request help related to your data or privacy.
-
-If you want certain synced app data removed, contact us at support@cutiq.app and include enough information for us to understand your request.
+- contact us at [support@cutiq.app](mailto:support@cutiq.app) to request help related to your data.
 
 ## Children's Privacy
 
@@ -94,12 +120,12 @@ CutIQ does not track you across apps and websites owned by other companies for a
 
 ## Notifications
 
-If you enable reminders, CutIQ may schedule local notifications on your device for hair tips, routine reminders, and weekly check-ins. These notifications are managed through Apple notification services and your device settings.
+If you enable reminders, CutIQ schedules local notifications on your device for daily hair tips, routine reminders, and weekly analysis check-ins. These are managed through Apple's notification system and your device settings.
 
 ## Changes to This Policy
 
 We may update this Privacy Policy from time to time. If we make material changes, we will update the date at the top of this page.
 
-## Contact Us
+## Contact
 
 If you have privacy questions or requests, contact us at [support@cutiq.app](mailto:support@cutiq.app).

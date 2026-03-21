@@ -14,10 +14,6 @@ export const THEME: "system" | "light" | "dark" = "dark";
  */
 export const APP_ID = "1234567890";
 
-/**
- * Custom fonts for 'whimsical' and 'cursive' font styles.
- * Default system font is used for all other font styles.
- */
 export const WHIMSICAL_FONT = Caveat({ subsets: ["latin"] });
 export const CURSIVE_FONT = DM_Sans({ subsets: ["latin"] });
 
@@ -36,38 +32,38 @@ export const MATERIAL_SYMBOLS = [
 
 export const COLORS: ColorScheme = {
   LIGHT: {
-    "text-primary": "#101114",
-    "text-secondary": "rgba(43, 46, 56, 0.70)",
-    "fill-0": "#F5F1EA",
-    "fill-1": "#ECE4D7",
-    "fill-2": "#E0D3BE",
-    "fill-3": "#C9B89D",
-    "accent-brand": "#101114",
-    "accent-orange": "#BE8A43",
-    "accent-green": "#2E8B57",
-    "accent-red": "#B24C3E",
-    "accent-blue": "#3C5E7A",
-    "accent-indigo": "#56618D",
-    "accent-mint": "#49857E",
-    "accent-purple": "#7A5A87",
-    "accent-pink": "#A55A6B",
+    "text-primary": "#000000",
+    "text-secondary": "rgba(0, 0, 0, 0.55)",
+    "fill-0": "#FFFFFF",
+    "fill-1": "#F5F5F5",
+    "fill-2": "#EBEBEB",
+    "fill-3": "#D4D4D4",
+    "accent-brand": "#000000",
+    "accent-orange": "#000000",
+    "accent-green": "#000000",
+    "accent-red": "#000000",
+    "accent-blue": "#000000",
+    "accent-indigo": "#000000",
+    "accent-mint": "#000000",
+    "accent-purple": "#000000",
+    "accent-pink": "#000000",
   },
   DARK: {
-    "text-primary": "#F6F1E8",
-    "text-secondary": "rgba(234, 224, 208, 0.72)",
-    "fill-0": "#121211",
-    "fill-1": "#181714",
-    "fill-2": "#23211D",
-    "fill-3": "#312C25",
-    "accent-brand": "#E7D2B4",
-    "accent-orange": "#C99856",
-    "accent-green": "#54A071",
-    "accent-red": "#D16B57",
-    "accent-blue": "#6E92B0",
-    "accent-indigo": "#8A8FCE",
-    "accent-mint": "#73B7B0",
-    "accent-purple": "#A787C3",
-    "accent-pink": "#C97992",
+    "text-primary": "#FFFFFF",
+    "text-secondary": "rgba(255, 255, 255, 0.55)",
+    "fill-0": "#000000",
+    "fill-1": "#0A0A0A",
+    "fill-2": "#1A1A1A",
+    "fill-3": "#2A2A2A",
+    "accent-brand": "#FFFFFF",
+    "accent-orange": "#FFFFFF",
+    "accent-green": "#FFFFFF",
+    "accent-red": "#FFFFFF",
+    "accent-blue": "#FFFFFF",
+    "accent-indigo": "#FFFFFF",
+    "accent-mint": "#FFFFFF",
+    "accent-purple": "#FFFFFF",
+    "accent-pink": "#FFFFFF",
   },
 } as const;
 
