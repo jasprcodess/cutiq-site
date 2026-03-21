@@ -29,7 +29,7 @@ export function HeroImage({ src, srcset, alt, bezel }: HeroImageProps) {
 
   return (
     <div className={styles.heroImage}>
-      <div
+      {false && <div
         className={styles.shadow}
         style={
           {
@@ -44,7 +44,7 @@ export function HeroImage({ src, srcset, alt, bezel }: HeroImageProps) {
           height={68}
           style={{ width: "100%", height: "auto" }}
         />
-      </div>
+      </div>}
       <canvas ref={canvasRef} className={styles.imageCanvas} aria-label={alt} />
     </div>
   );

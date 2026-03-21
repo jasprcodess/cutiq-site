@@ -96,7 +96,7 @@ export function HeroVideo({ src, srcset, alt = "", bezel }: HeroVideoProps) {
         className={styles.hiddenVideoContainer}
         ref={hiddenVideoContainerRef}
       ></div>
-      <div
+      {false && <div
         className={styles.shadow}
         style={
           {
@@ -111,7 +111,7 @@ export function HeroVideo({ src, srcset, alt = "", bezel }: HeroVideoProps) {
           height={68}
           style={{ width: "100%", height: "auto" }}
         />
-      </div>
+      </div>}
 
       <canvas ref={canvasRef} className={styles.videoCanvas} aria-label={alt} />
 
