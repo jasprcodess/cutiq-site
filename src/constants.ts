@@ -6,7 +6,7 @@ import { ColorScheme } from "./types/shared";
  * "light" - forces your website to always use light theme
  * "dark" - forces your website to always use dark theme
  */
-export const THEME: "system" | "light" | "dark" = "dark";
+export const THEME: "system" | "light" | "dark" = "light";
 
 /**
  * Your App Store App ID without the 'id' prefix.

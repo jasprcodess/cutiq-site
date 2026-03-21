@@ -83,7 +83,7 @@ export default function RootLayout({
             links={[
               { label: "Privacy", href: "/privacy" },
               { label: "Terms", href: "/terms" },
-              { label: "support@cutiq.app", href: "mailto:support@cutiq.app" },
+              { label: "Contact", href: "mailto:jasprcodes@gmail.com" },
             ]}
             footnoteLeading={`© ${new Date().getFullYear()} CutIQ`}
           />

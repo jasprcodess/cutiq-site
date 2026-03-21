@@ -44,13 +44,18 @@ export default function Page() {
             description="Your analysis builds a weekly schedule with products and timing. Check off tasks daily. Redo the analysis and it adjusts."
           />
 
-          <CardGrid.OverlaidCard
+          <CardGrid.StackedCard
             maxWidth="third"
-            imageSrc="/cutiq/style-pompadour.jpg"
             title="Try it on your face"
             description="11 styles or describe your own. Every preview uses your actual photo."
-            textAlignment="bottomLeading"
-            textColorTheme="light"
+            media={
+              <CardGrid.StackedCard.Video
+                src="/cutiq/app-demo.mp4"
+                bezel="iPhone 17 Black"
+                bezelCrop={{ edge: "bottom", croppedRatio: 0.35 }}
+              />
+            }
+            textAlignment="leading"
           />
 
           <CardGrid.StackedCard
