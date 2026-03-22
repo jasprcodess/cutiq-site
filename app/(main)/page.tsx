@@ -1,7 +1,9 @@
 import { CardGrid } from "@/components/card_grid/card_grid";
+import { ComparePreview } from "@/components/compare_preview/compare_preview";
 import { DownloadActionButton } from "@/components/download_action_button/download_action_button";
 import { Hero } from "@/components/hero/hero";
 import { Section } from "@/components/section/section";
+import { StyleGallery } from "@/components/style_gallery/style_gallery";
 
 export default function Page() {
   return (
@@ -27,28 +29,20 @@ export default function Page() {
             maxWidth="full"
             title="Try any style"
             description="30+ looks generated on your actual face."
-            media={
-              <CardGrid.StackedCard.Video
-                src="/cutiq/app-demo.mp4"
-                bezel="iPhone 17 Black"
-                padded={true}
-                bezelCrop={{ edge: "top", croppedRatio: 0.6 }}
-              />
-            }
+            media={<StyleGallery />}
             layoutDirection="reverse"
           />
         </CardGrid>
 
-        <CardGrid rowHeight={440}>
+        <CardGrid rowHeight={400}>
           <CardGrid.StackedCard
             maxWidth="half"
             title="Save and compare"
             description="Keep the looks you like. Show your barber."
             media={
-              <CardGrid.StackedCard.Image
-                src="/cutiq/before-after.jpg"
-                alt="Before and after hairstyle comparison"
-                padded={false}
+              <ComparePreview
+                leftSrc="/cutiq/style-buzz-cut.jpg"
+                rightSrc="/cutiq/style-surfer-long.jpg"
               />
             }
             layoutDirection="forward"
