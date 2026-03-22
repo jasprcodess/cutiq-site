@@ -43,7 +43,7 @@ export default function Page() {
             media={
               <ComparePreview
                 leftSrc="/cutiq/style-buzz-cut.jpg"
-                rightSrc="/cutiq/style-surfer-long.jpg"
+                rightSrc="/cutiq/style-textured-fringe.jpg"
               />
             }
             layoutDirection="forward"

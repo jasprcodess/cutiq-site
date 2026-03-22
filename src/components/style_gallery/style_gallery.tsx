@@ -16,25 +16,32 @@ const BASE_IMAGES = [
   "/cutiq/style-textured-fringe.jpg",
   "/cutiq/style-man-bun.jpg",
   "/cutiq/style-caesar.jpg",
+  "/cutiq/style-buzz-cut.jpg",
 ];
 
-// Triple the images so the scroll animation loops seamlessly
-const STYLE_IMAGES = [...BASE_IMAGES, ...BASE_IMAGES, ...BASE_IMAGES];
+// 12 images = 2 full rows of 6 columns per set
+// Render 2 identical sets so we can scroll exactly -50% for a seamless loop
+const SET = BASE_IMAGES;
+const TILES = [...SET, ...SET];
 
 export function StyleGallery() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.grid}>
-        {STYLE_IMAGES.map((src, i) => (
-          <div key={i} className={styles.tile}>
-            <img
-              src={withBasePath(src)}
-              alt=""
-              loading="lazy"
-              decoding="async"
-            />
+      <div className={styles.rotated}>
+        <div className={styles.scrollContainer}>
+          <div className={styles.grid}>
+            {TILES.map((src, i) => (
+              <div key={i} className={styles.tile}>
+                <img
+                  src={withBasePath(src)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
       <div className={styles.fadeTop} />
       <div className={styles.fadeBottom} />
