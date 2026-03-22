@@ -104,7 +104,12 @@ export default function RootLayout({
           {children}
 
           <CompactFooter
-            appIcon={<AppIcon src="/cutiq/app-icon-solid.png" mask />}
+            appIcon={
+              <span style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <AppIcon src="/cutiq/app-icon-solid.png" mask />
+                <span style={{ fontSize: "16px", fontWeight: 600, letterSpacing: "-0.01em" }}>CutIQ</span>
+              </span>
+            }
             links={[
               { label: "Privacy", href: "/privacy" },
               { label: "Terms", href: "/terms" },
