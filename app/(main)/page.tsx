@@ -1,5 +1,6 @@
 import { CardGrid } from "@/components/card_grid/card_grid";
 import { ComparePreview } from "@/components/compare_preview/compare_preview";
+import { CoverImage } from "@/components/cover_image/cover_image";
 import { DownloadActionButton } from "@/components/download_action_button/download_action_button";
 import { Hero } from "@/components/hero/hero";
 import { Section } from "@/components/section/section";
@@ -53,10 +54,10 @@ export default function Page() {
             title="Four photos. Real feedback."
             description="Health score, face shape, and what to do next."
             media={
-              <CardGrid.StackedCard.Image
+              <CoverImage
                 src="/cutiq/style-side-part.jpg"
                 alt="AI-generated hairstyle preview"
-                padded={false}
+                objectPosition="center 20%"
               />
             }
             layoutDirection="forward"

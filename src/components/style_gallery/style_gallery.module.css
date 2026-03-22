@@ -7,21 +7,20 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 120px);
   gap: 8px;
   position: absolute;
   left: 50%;
-  width: 140%;
   transform: translate(-50%, 0) rotate(-12deg);
-  animation: scrollUp 25s linear infinite;
+  animation: scrollUp 30s linear infinite;
 }
 
 @keyframes scrollUp {
   0% {
-    top: 0%;
+    top: 10%;
   }
   100% {
-    top: -100%;
+    top: -180%;
   }
 }
 
@@ -34,9 +33,11 @@
 }
 
 .tile {
-  aspect-ratio: 3 / 4;
+  width: 120px;
+  height: 160px;
   border-radius: 10px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .tile img {
@@ -51,7 +52,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  height: 40%;
+  height: 35%;
   z-index: 1;
   pointer-events: none;
 }
@@ -61,7 +62,7 @@
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0.7) 40%,
+    rgba(255, 255, 255, 0.6) 45%,
     rgba(255, 255, 255, 0) 100%
   );
 }
@@ -71,12 +72,12 @@
   background: linear-gradient(
     to top,
     rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0.7) 40%,
+    rgba(255, 255, 255, 0.6) 45%,
     rgba(255, 255, 255, 0) 100%
   );
 }
 
-/* Left and right fade for clean edges - left is wider/softer */
+/* Left and right fade for clean edges */
 .fadeLeft,
 .fadeRight {
   position: absolute;
@@ -88,19 +89,19 @@
 
 .fadeLeft {
   left: 0;
-  width: 40%;
+  width: 35%;
   background: linear-gradient(
     to right,
     rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0.8) 30%,
-    rgba(255, 255, 255, 0.3) 60%,
+    rgba(255, 255, 255, 0.7) 35%,
+    rgba(255, 255, 255, 0.2) 65%,
     rgba(255, 255, 255, 0) 100%
   );
 }
 
 .fadeRight {
   right: 0;
-  width: 15%;
+  width: 12%;
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 1) 0%,
