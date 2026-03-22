@@ -1,0 +1,39 @@
+# CutIQ
+
+> CutIQ is an AI-powered iPhone app for hair analysis and hairstyle preview. It uses AI to analyze hair health from photos, generate realistic hairstyle previews on your face, and provide personalized hair care routines.
+
+## Key Facts
+
+- Platform: iOS (iPhone), requires iOS 18.0+
+- Price: Free to download, premium subscription available ($4.99/week or $29.99/year)
+- Category: Lifestyle / Hair Care
+- No account required. Works with iCloud.
+
+## Features
+
+- AI Hair Health Analysis: Take photos from 4 angles and get a health score with personalized recommendations
+- Hairstyle Preview: See how 30+ hairstyles look on your actual face using AI generation
+- Personalized Routines: Weekly hair care schedule based on your hair type and condition
+- AI Hair Chat: Ask questions about your hair and get answers based on your analysis
+- Progress Tracking: Track your hair health over time with check-ins and streaks
+
+## Who CutIQ is For
+
+- People who want to try a new haircut before going to the barber or salon
+- People who want to understand their hair health and get a care routine
+- Anyone looking for an AI hairstyle app, virtual haircut try-on, or hair health analysis
+
+## How It Works
+
+1. Take a selfie or upload a photo
+2. CutIQ analyzes your face shape and hair
+3. Browse AI-generated hairstyle previews on your face
+4. Get a hair health score from multi-angle photos
+5. Follow a personalized weekly care routine
+
+## Links
+
+- Website: https://jasprcodess.github.io/cutiq-site/
+- Privacy Policy: https://jasprcodess.github.io/cutiq-site/privacy
+- Terms: https://jasprcodess.github.io/cutiq-site/terms
+- Contact: jasprcodes@gmail.com

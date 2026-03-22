@@ -11,33 +11,60 @@ import { ThemeProvider } from "@/providers/theme_provider";
 import "@/global.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cutiq.app";
-const TITLE = "CutIQ - AI Hair Analysis";
+const TITLE = "CutIQ | Download Today";
+const OG_TITLE = "CutIQ — AI Hair Analysis & Hairstyle Preview for iPhone";
 const DESCRIPTION =
-  "AI-powered hair health scores, custom routines, and style previews on your face.";
+  "Analyze your hair health with AI, preview hairstyles on your face, and get a personalized care routine. Free on the App Store.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   metadataBase: new URL(SITE_URL),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
-    title: TITLE,
+    title: OG_TITLE,
     description: DESCRIPTION,
     url: SITE_URL,
+    siteName: "CutIQ",
+    locale: "en_US",
     images: [
       {
         url: "/og-preview.png",
         width: 1200,
         height: 720,
-        alt: "CutIQ app preview",
+        alt: "CutIQ app showing AI hairstyle preview on an iPhone",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: TITLE,
+    title: OG_TITLE,
     description: DESCRIPTION,
-    images: ["/og-preview.png"],
+    images: [
+      {
+        url: "/og-preview.png",
+        alt: "CutIQ app showing AI hairstyle preview on an iPhone",
+      },
+    ],
+  },
+  other: {
+    "application-name": "CutIQ",
+    "apple-mobile-web-app-title": "CutIQ",
+    "format-detection": "telephone=no",
   },
 };
 
