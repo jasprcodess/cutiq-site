@@ -10,9 +10,8 @@ export const THEME: "system" | "light" | "dark" = "light";
 
 /**
  * Your App Store App ID without the 'id' prefix.
- * Replace this once the new App Store Connect record shows the Apple ID.
  */
-export const APP_ID = "1234567890";
+export const APP_ID = "6760941100";
 
 export const WHIMSICAL_FONT = Caveat({ subsets: ["latin"] });
 export const CURSIVE_FONT = DM_Sans({ subsets: ["latin"] });
