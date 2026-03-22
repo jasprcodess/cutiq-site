@@ -4,7 +4,7 @@
 import { withBasePath } from "@/lib/utils";
 import styles from "./style_gallery.module.css";
 
-const STYLE_IMAGES = [
+const BASE_IMAGES = [
   "/cutiq/style-buzz-cut.jpg",
   "/cutiq/style-pompadour.jpg",
   "/cutiq/style-curtains.jpg",
@@ -16,17 +16,10 @@ const STYLE_IMAGES = [
   "/cutiq/style-textured-fringe.jpg",
   "/cutiq/style-man-bun.jpg",
   "/cutiq/style-caesar.jpg",
-  "/cutiq/style-buzz-cut.jpg",
-  "/cutiq/style-pompadour.jpg",
-  "/cutiq/style-curtains.jpg",
-  "/cutiq/style-ivy-league.jpg",
-  "/cutiq/style-modern-shag.jpg",
-  "/cutiq/style-side-part.jpg",
-  "/cutiq/style-shoulder-layers.jpg",
-  "/cutiq/style-surfer-long.jpg",
-  "/cutiq/style-textured-fringe.jpg",
-  "/cutiq/style-man-bun.jpg",
 ];
+
+// Triple the images so the scroll animation loops seamlessly
+const STYLE_IMAGES = [...BASE_IMAGES, ...BASE_IMAGES, ...BASE_IMAGES];
 
 export function StyleGallery() {
   return (

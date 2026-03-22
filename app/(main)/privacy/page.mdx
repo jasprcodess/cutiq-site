@@ -1,6 +1,6 @@
 ## Privacy Policy
 
-Last updated: March 21, 2026
+Last updated: March 22, 2026
 
 CutIQ ("CutIQ," "we," "our," or "us") provides AI-powered hair analysis, hairstyle previews, routines, and chat-based hair guidance on iPhone. This Privacy Policy explains what information the app handles, how it is used, and what choices you have.
 
@@ -12,10 +12,14 @@ CutIQ is designed to help you analyze your hair, preview hairstyles, and track p
 
 ### Photos and image content
 
-- **Source photos** (selfies or photos you select for style generation): These are held in device memory only for the duration of the request. They are converted to a compressed format, sent to our backend for AI processing, and released from memory afterward. Source photos are never written to disk by the app and never stored on our servers.
+- **Source photos** (selfies or photos you select for style generation): These are held in device memory only for the duration of the request. They are converted to a compressed format, sent to our backend for AI processing, and released from memory afterward. Source photos are never written to disk by the app and never stored on our servers. However, they are forwarded to third-party AI model providers for processing (see Third-Party Services below).
 - **Front analysis photo**: When you complete a hair analysis, your front-facing photo is saved locally on your device and synced to your private iCloud (CloudKit) account so your analysis results can display it across sessions and devices.
 - **Other analysis photos** (top, side, hairline): These are combined into a single composite image, sent to our backend for analysis, and then released from memory. They are not stored on your device or in iCloud.
 - **Generated hairstyle images**: AI-generated results are saved locally on your device and synced to your private iCloud (CloudKit) account. If the auto-save setting is enabled (on by default), generated images are also saved to your device photo library with a CutIQ watermark.
+
+### Face detection
+
+The app uses Apple's Vision framework for on-device face detection to assist with camera framing during photo capture. Face detection runs entirely on your device. No face geometry, biometric data, or face detection results leave your device or are stored by the app.
 
 ### Hair analysis and routine data
 
@@ -23,7 +27,7 @@ The app stores your analysis results (score, hair type, texture, face shape, rou
 
 ### Profile and onboarding data
 
-During onboarding, the app collects your selected face shape, age range, gender, and other preferences. This is stored locally and synced to your private iCloud (CloudKit) account.
+During onboarding, the app collects your selected face shape, age range, gender, hair satisfaction level, and other preferences. This is stored locally and synced to your private iCloud (CloudKit) account.
 
 ### Identifiers
 
@@ -35,11 +39,11 @@ If you subscribe, the app verifies your entitlement through Apple in-app purchas
 
 ### Chat messages
 
-When you use the AI chat feature, your messages and conversation history (up to the last 10 turns) are sent to our backend for processing. Chat messages are not stored on our servers or in iCloud. They exist only in device memory for the duration of your chat session.
+When you use the AI chat feature, your messages and conversation history (up to the last 10 turns) are sent to our backend for processing. Chat messages are forwarded to a third-party AI model provider to generate responses. Chat messages are not stored on our servers or in iCloud. They exist only in device memory for the duration of your chat session. We cannot guarantee how the third-party AI model provider handles data after processing (see Third-Party Services below).
 
 ### Usage-limiting and security metadata
 
-Our backend processes limited request metadata for App Attest verification, subscription validation, rate limiting, and abuse prevention. Rate-limit counters are held in server memory only and are not persisted.
+Our backend processes limited request metadata for App Attest verification, subscription validation, rate limiting, and abuse prevention. Rate-limit counters are held in server memory only and are not persisted. App Attest session tokens are stored locally on your device in the Keychain for security verification purposes.
 
 ### Support communications
 
@@ -66,30 +70,36 @@ We do not sell your personal information. We share data only as needed to operat
 
 2. **Apple In-App Purchase / App Store** by Apple — used to process subscriptions and verify purchase status. We do not receive your payment card information. [Apple privacy policy](https://www.apple.com/legal/privacy/)
 
-3. **Supabase** by Supabase, Inc. — used for backend edge functions that handle App Attest verification, hair analysis requests, hairstyle generation requests, and chat requests. Image data you submit for analysis or generation passes through Supabase to reach the AI model provider. Our backend does not persist image data or chat messages. [Supabase privacy policy](https://supabase.com/privacy)
+3. **Supabase** by Supabase, Inc. — used for backend edge functions that handle App Attest verification, hair analysis requests, hairstyle generation requests, and chat requests. Image data and chat messages you submit pass through Supabase infrastructure to reach the AI model provider. Our backend does not persist image data or chat messages. [Supabase privacy policy](https://supabase.com/privacy)
 
-4. **Superwall** by Superwall — used for paywall presentation and entitlement handling. Receives app-specific user identifiers and subscription state. [Superwall privacy policy](https://superwall.com/privacy)
+4. **Superwall** by Superwall — used for paywall presentation, A/B testing, and entitlement handling. Receives app-specific user identifiers (CloudKit user ID), subscription status, and device information (device model, OS version, locale, app version). The Superwall SDK may also collect paywall interaction data (views, taps, purchases) for its analytics. [Superwall privacy policy](https://superwall.com/privacy)
 
-5. **AI model providers accessed through our backend** — used to produce hair analysis results, hairstyle generation images, and chat responses. Image and text content you submit for these features is forwarded through our backend to the model provider. These requests are stateless on our end.
+5. **ModelRouter** — the AI model routing service used to process hair analysis, hairstyle generation, and chat requests. Your photos (as compressed image data) and chat messages are forwarded through our backend to ModelRouter, which routes requests to downstream AI models (including Google Gemini for text analysis and specialized models for image generation). We do not control how ModelRouter or its downstream model providers retain or process data after requests are fulfilled. These requests are stateless on our end.
 
 ## Data Storage Summary
 
 | Data | On Device | In Your iCloud | On Our Servers |
 |---|---|---|---|
-| Source photos (selfies) | Memory only | No | Not stored |
+| Source photos (selfies) | Memory only | No | Not stored (forwarded to AI provider) |
 | Front analysis photo | Yes | Yes | Not stored |
-| Other analysis photos | Memory only | No | Not stored |
+| Other analysis photos | Memory only | No | Not stored (forwarded to AI provider) |
 | Generated images | Yes | Yes | Not stored |
 | Analysis results and routine | Yes | Yes | Not stored |
 | Profile and preferences | Yes | Yes | Not stored |
-| Chat messages | Memory only | No | Not stored |
+| Chat messages | Memory only | No | Not stored (forwarded to AI provider) |
+| Face detection data | On-device only | No | No |
 
 ## Data Retention
 
 - Data in your iCloud / CloudKit account remains until you delete it through the app, delete app data from your device, or manage it through your Apple account settings.
 - Locally stored data (images, analysis results) remains on your device until you delete it through the app or uninstall the app.
 - Our backend does not persist user data beyond the duration of individual requests. Rate-limit counters reset automatically.
+- We cannot guarantee the data retention practices of third-party AI model providers. Photos and chat messages forwarded to these providers for processing may be subject to their own retention policies.
 - Support emails are retained as long as reasonably necessary to respond and maintain support history.
+
+## Data Deletion
+
+You can delete your account and all associated data from the Settings screen in the app. This permanently removes your synced data from iCloud (CloudKit), clears all local app data, removes cached files, and resets your identity. Data that was forwarded to third-party AI model providers for processing during previous requests cannot be recalled by us.
 
 ## Security
 
@@ -102,13 +112,14 @@ You can:
 - stop granting camera or photo-library access through your iPhone settings;
 - turn off auto-save to photo library in the app settings;
 - delete individual generated images or all data through the app;
+- delete your account and all associated data from Settings;
 - disable notifications through iPhone settings or within the app;
 - manage or cancel subscriptions through Apple;
 - contact us at [jasprcodes@gmail.com](mailto:jasprcodes@gmail.com) to request help related to your data.
 
 ## Children's Privacy
 
-CutIQ is not directed to children under 13, and we do not knowingly collect personal information from children under 13.
+CutIQ is not directed to children under 13, and we do not knowingly collect personal information from children under 13. If we learn that we have collected personal information from a child under 13, we will take steps to delete it.
 
 ## International Transfers
 
