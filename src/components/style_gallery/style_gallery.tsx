@@ -5,16 +5,19 @@ import { withBasePath } from "@/lib/utils";
 import styles from "./style_gallery.module.css";
 
 export function StyleGallery() {
+  const src = withBasePath("/cutiq/style-strip.png");
   return (
     <div className={styles.wrapper}>
-      <img
-        src={withBasePath("/cutiq/style-mosaic.jpg")}
-        alt="Gallery of AI-generated hairstyles"
-        className={styles.mosaic}
-        loading="lazy"
-        decoding="async"
-        draggable={false}
-      />
+      <div className={styles.rotated}>
+        <div className={styles.track}>
+          <img src={src} alt="" draggable={false} className={styles.strip} />
+          <img src={src} alt="" draggable={false} className={styles.strip} aria-hidden="true" />
+        </div>
+      </div>
+      <div className={styles.fadeTop} />
+      <div className={styles.fadeBottom} />
+      <div className={styles.fadeLeft} />
+      <div className={styles.fadeRight} />
     </div>
   );
 }
