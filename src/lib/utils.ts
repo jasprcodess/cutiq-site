@@ -28,10 +28,10 @@ export function findSrcForTheme(
 	const targetSrcsetEntry = srcset?.find((entry) => entry.theme === theme);
 
 	if (targetSrcsetEntry === undefined) {
-		return src;
+		return withBasePath(src);
 	}
 
-	return targetSrcsetEntry.src;
+	return withBasePath(targetSrcsetEntry.src);
 }
 
 export function buildClassNameForFontStyle(
