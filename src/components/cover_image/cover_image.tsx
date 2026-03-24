@@ -8,11 +8,12 @@ interface CoverImageProps {
   src: string;
   alt: string;
   objectPosition?: string;
+  fadeBottom?: boolean;
 }
 
-export function CoverImage({ src, alt, objectPosition = "center" }: CoverImageProps) {
+export function CoverImage({ src, alt, objectPosition = "center", fadeBottom = false }: CoverImageProps) {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${fadeBottom ? styles.fadeBottom : ""}`}>
       <img
         src={withBasePath(src)}
         alt={alt}
