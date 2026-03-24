@@ -23,7 +23,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is CutIQ free?",
-    answer: "Free to download. Premium features like unlimited hairstyle generations and detailed analysis are available starting at $4.99/week or $29.99/year.",
+    answer: "Free to download. Premium features like unlimited hairstyle generations and detailed analysis are available through an optional subscription.",
   },
   {
     question: "Does it work for all hair types?",
@@ -31,7 +31,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is my data private?",
-    answer: "Your data stays on your device and in your private iCloud account. Photos are processed by AI and not stored on our servers. No account or email required.",
+    answer: "Your data is stored on your device and synced through your private iCloud account. Photos sent for AI analysis are processed and not retained. No account or email required.",
   },
 ];
 
@@ -79,26 +79,12 @@ const jsonLd = {
         "email": "jasprcodes@gmail.com",
         "url": SITE_URL,
       },
-      "offers": [
-        {
-          "@type": "Offer",
-          "price": 0,
-          "priceCurrency": "USD",
-          "category": "Free Download",
-        },
-        {
-          "@type": "Offer",
-          "price": 4.99,
-          "priceCurrency": "USD",
-          "description": "CutIQ Pro - Weekly",
-        },
-        {
-          "@type": "Offer",
-          "price": 29.99,
-          "priceCurrency": "USD",
-          "description": "CutIQ Pro - Yearly",
-        },
-      ],
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "USD",
+        "category": "Free Download",
+      },
       "sameAs": ["https://apps.apple.com/app/cutiq/id6760941100"],
     },
     {
@@ -133,7 +119,7 @@ const jsonLd = {
           "name": "Is CutIQ free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "CutIQ is free to download. Premium features including unlimited AI hairstyle generations and detailed hair analysis are available through an in-app subscription starting at $4.99/week or $29.99/year.",
+            "text": "CutIQ is free to download. Premium features including unlimited AI hairstyle generations and detailed hair analysis are available through an optional in-app subscription.",
           },
         },
         {
@@ -149,7 +135,7 @@ const jsonLd = {
           "name": "Is my data private?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. CutIQ stores your data on your device and in your private iCloud account. Photos are processed by AI and not stored on our servers. No account or email is required to use the app.",
+            "text": "Your data is stored on your device and synced through your private iCloud account. Photos sent for AI analysis are processed and not retained. No account or email is required.",
           },
         },
       ],

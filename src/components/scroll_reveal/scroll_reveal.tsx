@@ -1,7 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import styles from "./scroll_reveal.module.css";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -10,44 +13,34 @@ interface ScrollRevealProps {
 
 export function ScrollReveal({ children, delay = 0 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [mounted, setMounted] = useState(false);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
     const el = ref.current;
     if (!el) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(el);
-        }
+    gsap.set(el, { opacity: 0, y: 24, filter: "blur(8px)" });
+
+    gsap.to(el, {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 0.8,
+      delay: delay / 1000,
+      ease: "power2.out",
+      clearProps: "filter",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 90%",
+        once: true,
       },
-      { threshold: 0.1 }
-    );
+    });
 
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [mounted]);
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => {
+        if (t.vars.trigger === el) t.kill();
+      });
+    };
+  }, [delay]);
 
-  // Before JS hydrates, render fully visible (no animation classes)
-  const className = mounted
-    ? `${styles.reveal} ${visible ? styles.visible : ""}`
-    : "";
-
-  return (
-    <div
-      ref={ref}
-      className={className}
-      style={mounted && !visible ? { transitionDelay: `${delay}ms` } : undefined}
-    >
-      {children}
-    </div>
-  );
+  return <div ref={ref}>{children}</div>;
 }
