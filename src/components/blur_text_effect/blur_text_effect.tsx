@@ -14,7 +14,6 @@ export function BlurTextEffect({ children, className = "", delay = 0 }: BlurText
   const containerRef = useRef<HTMLSpanElement>(null);
   const [triggered, setTriggered] = useState(false);
 
-  // Observe when element enters viewport
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -33,7 +32,6 @@ export function BlurTextEffect({ children, className = "", delay = 0 }: BlurText
     return () => observer.disconnect();
   }, []);
 
-  // Animate when triggered
   useEffect(() => {
     if (!triggered || !containerRef.current) return;
 
@@ -53,15 +51,27 @@ export function BlurTextEffect({ children, className = "", delay = 0 }: BlurText
     });
   }, [triggered, children, delay]);
 
+  // Split into words, keep each word as a nowrap unit so wrapping only happens between words
+  const words = children.split(" ");
+
   return (
     <span className={`${styles.container} ${className}`} ref={containerRef}>
-      {children.split("").map((char, i) => (
-        <span
-          key={`${char}-${i}`}
-          className={styles.char}
-          style={triggered ? undefined : { opacity: 1 }}
-        >
-          {char === " " ? "\u00A0" : char}
+      {words.map((word, wi) => (
+        <span key={wi} className={styles.word}>
+          {word.split("").map((char, ci) => (
+            <span
+              key={`${wi}-${ci}`}
+              className={styles.char}
+              style={triggered ? undefined : { opacity: 1 }}
+            >
+              {char}
+            </span>
+          ))}
+          {wi < words.length - 1 && (
+            <span className={styles.char} style={triggered ? undefined : { opacity: 1 }}>
+              {"\u00A0"}
+            </span>
+          )}
         </span>
       ))}
     </span>
