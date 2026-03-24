@@ -136,7 +136,7 @@ export default function Page() {
       />
       <Section paddingTop={80}>
         <Hero
-          title="Your hair, analyzed."
+          title={<>Your hair, <em>analyzed.</em></>}
           subtitle="AI-powered hair health scores, custom routines, and style previews on your face."
           media={
             <Hero.Video
