@@ -1,6 +1,5 @@
 import { CardGrid } from "@/components/card_grid/card_grid";
 import { ComparePreview } from "@/components/compare_preview/compare_preview";
-import { CoverImage } from "@/components/cover_image/cover_image";
 import { DownloadActionButton } from "@/components/download_action_button/download_action_button";
 import { Hero } from "@/components/hero/hero";
 import { Section } from "@/components/section/section";
@@ -175,18 +174,13 @@ export default function Page() {
             layoutDirection="forward"
           />
 
-          <CardGrid.StackedCard
+          <CardGrid.OverlaidCard
             maxWidth="half"
+            imageSrc="/cutiq/hair-score.jpg"
+            imageObjectPosition="center 40%"
             title="Know your hair score"
             description="Type, texture, density, and face shape in seconds."
-            media={
-              <CoverImage
-                src="/cutiq/hair-score.jpg"
-                alt="CutIQ hair analysis showing 8.5 score with hair profile details"
-                objectPosition="center 40%"
-              />
-            }
-            layoutDirection="forward"
+            textAlignment="bottomLeading"
           />
         </CardGrid>
 

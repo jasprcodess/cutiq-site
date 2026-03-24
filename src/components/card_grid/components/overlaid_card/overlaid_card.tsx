@@ -12,6 +12,7 @@ interface OverlaidCardProps {
   maxWidth: "third" | "half" | "twoThirds" | "full";
   imageSrc: string;
   imageSrcset?: ImageSrcsetEntry[];
+  imageObjectPosition?: string;
   title: string;
   titleFontStyle?: FontStyle;
   description?: string;
@@ -35,6 +36,7 @@ export function OverlaidCard({
   maxWidth,
   imageSrc,
   imageSrcset,
+  imageObjectPosition,
   title,
   titleFontStyle = "sans",
   description,
@@ -75,6 +77,7 @@ export function OverlaidCard({
         <BackgroundImage
           imageSrc={imageSrc}
           imageSrcset={imageSrcset}
+          objectPosition={imageObjectPosition}
           onCalculateBrightness={onCalculateImageBrightness}
         />
       </div>
@@ -91,10 +94,12 @@ export function OverlaidCard({
 function BackgroundImage({
   imageSrc,
   imageSrcset,
+  objectPosition,
   onCalculateBrightness,
 }: {
   imageSrc: string;
   imageSrcset?: ImageSrcsetEntry[];
+  objectPosition?: string;
   onCalculateBrightness?: (brightness: number) => void;
 }) {
   const theme = useTheme();
@@ -120,7 +125,7 @@ function BackgroundImage({
       src={withBasePath(src)}
       alt=""
       fill={true}
-      style={{ objectFit: "cover" }}
+      style={{ objectFit: "cover", objectPosition }}
       onLoad={onLoad}
     />
   );
