@@ -100,13 +100,13 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      height: 140%;
+      height: 180%;
       background-color: var(--overlaid-card-text-backdrop-color);
       mask-image: linear-gradient(
         to top,
         rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 1) 40%,
-        rgba(0, 0, 0, 0) 100%
+        rgba(0, 0, 0, 1) 60%,
+        rgba(0, 0, 0, 0) 85%
       );
       z-index: -1;
 			opacity: 1;
