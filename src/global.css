@@ -37,21 +37,7 @@ body {
   line-height: 1.5;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  background-color: #0000ff;
-  background-image:
-    linear-gradient(
-      135deg,
-      #0000ff 0%,
-      #0033ff 15%,
-      #0000cc 30%,
-      #0044ff 45%,
-      #0000ee 55%,
-      #0022dd 70%,
-      #0000ff 85%,
-      #0033ee 100%
-    );
-  background-size: 400% 400%;
-  animation: shimmer 12s ease-in-out infinite;
+  background: #f5f5f5;
   color: var(--color-text-primary);
 }
 
@@ -119,14 +105,4 @@ ol[role="list"] {
     sans-serif;
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
+

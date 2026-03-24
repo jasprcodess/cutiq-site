@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next";
 import { AppIcon } from "@/components/app_icon/app_icon";
 import { CompactFooter } from "@/components/compact_footer/compact_footer";
 import { DownloadActionButton } from "@/components/download_action_button/download_action_button";
+import { GradientBackground } from "@/components/gradient_background/gradient_background";
 import { MaterialSymbolsLink } from "@/components/material_symbols_link/material_symbols_link";
 import { Navbar } from "@/components/navbar/navbar";
 import { ThemeStyle } from "@/components/theme_style/theme_style";
@@ -89,6 +90,7 @@ export default function RootLayout({
         <MaterialSymbolsLink />
       </head>
       <body>
+        <GradientBackground />
         <ThemeProvider>
           <Navbar
             icon={<AppIcon src="/cutiq/app-icon-solid.png" mask />}
