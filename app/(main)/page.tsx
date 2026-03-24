@@ -1,3 +1,4 @@
+import { BlurTextEffect } from "@/components/blur_text_effect/blur_text_effect";
 import { CardGrid } from "@/components/card_grid/card_grid";
 import { ComparePreview } from "@/components/compare_preview/compare_preview";
 import { DownloadActionButton } from "@/components/download_action_button/download_action_button";
@@ -138,7 +139,7 @@ export default function Page() {
       <Section paddingTop={80}>
         <ScrollReveal>
           <Hero
-            title={<>Your hair, <em>analyzed.</em></>}
+            title={<><BlurTextEffect>Your hair, </BlurTextEffect><em><BlurTextEffect delay={200}>analyzed.</BlurTextEffect></em></>}
             subtitle="AI-powered hair health scores, custom routines, and style previews on your face."
             media={
               <Hero.Video
@@ -233,7 +234,7 @@ export default function Page() {
               lineHeight: 1.2,
               letterSpacing: "-0.02em",
             }}>
-              See what works for you.
+              <BlurTextEffect>See what works for you.</BlurTextEffect>
             </h2>
             <p style={{
               fontSize: "16px",
