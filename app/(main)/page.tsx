@@ -183,8 +183,7 @@ export default function Page() {
               <CoverImage
                 src="/cutiq/hair-score.jpg"
                 alt="CutIQ hair analysis showing 8.5 score with hair profile details"
-                objectPosition="center 30%"
-                fadeBottom
+                objectPosition="center 40%"
               />
             }
             layoutDirection="forward"

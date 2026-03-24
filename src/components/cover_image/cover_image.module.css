@@ -11,13 +11,4 @@
   object-fit: cover;
 }
 
-.fadeBottom::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(to bottom, transparent, white);
-  pointer-events: none;
-}
+
