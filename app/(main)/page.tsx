@@ -230,6 +230,8 @@ export default function Page() {
           alignItems: "center",
           gap: "24px",
           padding: "0 20px",
+          width: "100%",
+          maxWidth: "var(--base-width)",
         }}>
           <h2 style={{
             fontSize: "24px",
@@ -239,7 +241,9 @@ export default function Page() {
           }}>
             Questions
           </h2>
-          <FAQ items={FAQ_ITEMS} />
+          <div style={{ width: "100%" }}>
+            <FAQ items={FAQ_ITEMS} />
+          </div>
         </div>
       </Section>
 
