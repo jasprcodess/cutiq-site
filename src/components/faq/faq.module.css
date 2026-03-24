@@ -11,13 +11,15 @@
 .header {
   display: flex;
   width: 100%;
+  margin: 0;
 }
 
 .trigger {
   display: flex;
-  flex: 1;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   padding: 20px 0;
   text-align: left;
   font-size: 16px;
@@ -40,7 +42,7 @@
   transition: transform 0.2s ease;
 }
 
-[data-state="open"] > .chevron {
+.trigger[data-state="open"] .chevron {
   transform: rotate(180deg);
 }
 
