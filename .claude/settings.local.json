@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(git:*)",
-      "Bash(find /Users/jasper/Downloads/app-view-cutiq -name tailwind.config.* -o -name globals.css -o -name globals.scss)"
+      "Bash(find /Users/jasper/Downloads/app-view-cutiq -name tailwind.config.* -o -name globals.css -o -name globals.scss)",
+      "Bash(npm run:*)",
+      "Bash(git add:*)",
+      "Bash(ls:*)",
+      "Bash(gh run:*)"
     ]
   }
 }

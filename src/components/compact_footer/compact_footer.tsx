@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./compact_footer.module.css";
 
 interface CompactFooterProps {
@@ -21,14 +22,20 @@ export function CompactFooter({
           <ul className={styles.links}>
             {links.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  className={styles.link}
-                  target={link.external ? "_blank" : "_self"}
-                  rel={link.external ? "noopener noreferrer" : undefined}
-                >
-                  {link.label}
-                </a>
+                {link.external ? (
+                  <a
+                    href={link.href}
+                    className={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link href={link.href} className={styles.link}>
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
