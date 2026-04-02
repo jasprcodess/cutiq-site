@@ -1,10 +1,10 @@
 ## Privacy Policy
 
-Last updated: March 22, 2026
+Last updated: April 2, 2026
 
 CutIQ is an AI-powered hair analysis and hairstyle preview app for iPhone. This policy explains what data the app handles and how.
 
-**In short:** We do not sell your data. We do not use advertising trackers. We do not require an email, phone number, or password to use the app. Most of your data lives on your device and in your private iCloud account.
+**In short:** We do not sell your data. We do not require an email, phone number, or password to use the app. Most of your data lives on your device and in your private iCloud account. We use a mobile measurement partner to measure ad campaign performance, and you can opt out of this tracking at any time.
 
 ## What We Collect
 
@@ -18,13 +18,26 @@ CutIQ is an AI-powered hair analysis and hairstyle preview app for iPhone. This 
 
 **Face detection.** The app uses Apple's Vision framework for on-device face detection to help with camera framing. No face data leaves your device.
 
-**Subscriptions.** If you subscribe, the app verifies your purchase through Apple In-App Purchase. A signed transaction token is sent to our backend for verification. We never receive your payment card information.
+**Subscriptions.** If you subscribe, the app verifies your purchase through Apple In-App Purchase. A signed transaction token is sent to our backend for verification. We never receive your payment card information. Subscription events (such as plan type and price) are also shared with our measurement partner for ad attribution (see Advertising and Measurement below).
 
 **Identity.** CutIQ uses your iCloud account for identity. No email, phone number, or password is collected.
 
+## Advertising and Measurement
+
+CutIQ uses AppsFlyer, a mobile measurement partner, to measure the effectiveness of our advertising campaigns. When you install or use the app, AppsFlyer may collect:
+
+- **Device identifiers** (Apple's IDFA, if you consent through the App Tracking Transparency prompt)
+- **IP-based coarse location** (country/region level, not precise location)
+- **App events** (installs, subscription purchases) to attribute them to ad campaigns
+- **Basic device information** (device model, OS version)
+
+This data is shared with our advertising partners, including TikTok, to measure and optimize ad campaign performance. AppsFlyer does not receive your photos, chat messages, or hair analysis data.
+
+**You can opt out.** When CutIQ asks for permission to track your activity, you can decline. You can also change this at any time in iPhone Settings > Privacy & Security > Tracking. If you opt out, the app works exactly the same — only ad measurement is affected.
+
 ## How We Use Data
 
-We use your data to provide the app's features: generating hairstyles, analyzing your hair, syncing your data across devices, verifying subscriptions, enforcing usage limits, and responding to support requests.
+We use your data to provide the app's features: generating hairstyles, analyzing your hair, syncing your data across devices, verifying subscriptions, enforcing usage limits, measuring ad performance, and responding to support requests.
 
 ## Third-Party Services
 
@@ -32,15 +45,17 @@ We use your data to provide the app's features: generating hairstyles, analyzing
 - **Apple In-App Purchase** processes subscriptions. We do not receive payment details. [Apple Privacy Policy](https://www.apple.com/legal/privacy/)
 - **Supabase** hosts our backend functions that handle analysis, generation, and chat requests. Our backend does not persist your photos or messages. [Supabase Privacy Policy](https://supabase.com/privacy)
 - **Superwall** handles paywall presentation and subscription management. It receives your app user ID, subscription status, and basic device info. [Superwall Privacy Policy](https://superwall.com/privacy)
+- **AppsFlyer** provides mobile attribution and ad measurement. It receives device identifiers, app events, and basic device info. [AppsFlyer Privacy Policy](https://www.appsflyer.com/legal/services-privacy-policy/)
+- **TikTok** receives attribution data from AppsFlyer to measure ad campaign performance. [TikTok Privacy Policy](https://www.tiktok.com/legal/page/us/privacy-policy/en)
 - **Third-party AI providers** receive your photos and chat messages through our backend to generate analysis results, hairstyle images, and chat responses. These requests are stateless on our end. We cannot control how AI providers handle data after processing.
 
 ## Data Retention
 
-Your iCloud data remains until you delete it through the app or manage it through your Apple account. Local data remains until you delete it or uninstall the app. Our backend does not persist user data beyond individual requests. We cannot guarantee the retention practices of third-party AI providers.
+Your iCloud data remains until you delete it through the app or manage it through your Apple account. Local data remains until you delete it or uninstall the app. Our backend does not persist user data beyond individual requests. Ad attribution data is retained by AppsFlyer and advertising partners according to their respective privacy policies. We cannot guarantee the retention practices of third-party providers.
 
 ## Data Deletion
 
-You can delete your account and all associated data from the Settings screen in the app. This removes your data from iCloud, clears local storage, and resets your identity.
+You can delete your account and all associated data from the Settings screen in the app. This removes your data from iCloud, clears local storage, and resets your identity. To request deletion of data held by AppsFlyer, visit [AppsFlyer's privacy center](https://www.appsflyer.com/legal/services-privacy-policy/).
 
 ## Security
 
@@ -49,6 +64,7 @@ We use encrypted connections (HTTPS/TLS), server-side subscription verification,
 ## Your Choices
 
 - Revoke camera or photo library access in iPhone Settings
+- Opt out of ad tracking in iPhone Settings > Privacy & Security > Tracking
 - Turn off auto-save to photo library in app settings
 - Delete individual images or all data through the app
 - Delete your account from Settings
@@ -58,10 +74,6 @@ We use encrypted connections (HTTPS/TLS), server-side subscription verification,
 ## Children
 
 CutIQ is not directed to children under 13. We do not knowingly collect personal information from children under 13. If we learn we have, we will delete it.
-
-## Tracking
-
-CutIQ does not track you across apps or websites for advertising purposes.
 
 ## Changes
 
