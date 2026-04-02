@@ -30,7 +30,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is my data private?",
-    answer: "Your data is stored on your device and synced through your private iCloud account. Photos sent for AI analysis are processed and not retained. No account or email required.",
+    answer: "Your data is stored on your device and synced through your private iCloud account. Photos sent for AI analysis are processed and not retained. No account or email required. We use a measurement partner to track ad performance, but you can opt out at any time.",
   },
 ];
 
@@ -134,7 +134,7 @@ const jsonLd = {
           "name": "Is my data private?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Your data is stored on your device and synced through your private iCloud account. Photos sent for AI analysis are processed and not retained. No account or email is required.",
+            "text": "Your data is stored on your device and synced through your private iCloud account. Photos sent for AI analysis are processed and not retained. No account or email is required. We use a measurement partner to track ad performance, but you can opt out at any time.",
           },
         },
       ],
