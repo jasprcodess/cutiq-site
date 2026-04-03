@@ -1,6 +1,6 @@
 ## Privacy Policy
 
-Last updated: April 2, 2026
+Last updated: April 3, 2026
 
 CutIQ is an AI-powered hair analysis and hairstyle preview app for iPhone. This policy explains what data the app handles and how.
 
@@ -16,7 +16,7 @@ CutIQ is an AI-powered hair analysis and hairstyle preview app for iPhone. This 
 
 **Chat messages.** When you use the AI chat, your messages are sent to our backend and forwarded to a third-party AI provider. Chat messages exist only in device memory for the duration of your session. They are not saved to disk, iCloud, or our servers.
 
-**Face detection.** The app uses Apple's Vision framework for on-device face detection to help with camera framing. No face data leaves your device.
+**Face data (TrueDepth and Vision).** During onboarding, the app uses the TrueDepth camera through Apple's ARKit (ARFaceTrackingConfiguration) to scan your face and classify your face shape (e.g., oval, round, square). On devices without TrueDepth, the app falls back to Apple's Vision framework for face detection with landmark analysis. In both cases, all face processing happens entirely on your device in real time. No face geometry, depth data, or biometric information is collected, stored, or sent off your device. The only output retained is your face shape classification (a single label like "oval"), which is stored locally and synced to your private iCloud account. The app also uses Vision-based face detection during camera use to assist with framing — this data is processed in real time and immediately discarded.
 
 **Subscriptions.** If you subscribe, the app verifies your purchase through Apple In-App Purchase. A signed transaction token is sent to our backend for verification. We never receive your payment card information. Subscription events (such as plan type and price) are also shared with our measurement partner for ad attribution (see Advertising and Measurement below).
 
